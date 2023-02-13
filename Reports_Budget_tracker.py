@@ -19,15 +19,15 @@ from openpyxl import load_workbook
 
 # %%
 #PATH = input("Enter the Webdriver path: ")
-USERNAME = "mikhail.skrebnev@coterie.global"
-PASSWORD = "MDcl!gq1mHtN"
+USERNAME = 
+PASSWORD = 
 
 
 # %%
-file_path = os.path.join("/Users/mikhailskrebnev/Library/CloudStorage/OneDrive-CoterieMarketing/Budget management")
+file_path = os.path.join("/Users/mikhailskrebnev/Library/CloudStorage/OneDrive/Budget management")
 #file_name= os.path.split("Auto_Projects.csv")
 
-os.remove("/Users/mikhailskrebnev/Library/CloudStorage/OneDrive-CoterieMarketing/Budget management/Projects export.csv")
+os.remove("/Users/mikhailskrebnev/Library/CloudStorage/OneDrive/Budget management/Projects export.csv")
 
 chrome_options = Options()
 chrome_options.add_experimental_option("prefs", {
@@ -64,15 +64,15 @@ time.sleep(15)
 driver.close()
 
 try:
-    os.rename("/Users/mikhailskrebnev/Library/CloudStorage/OneDrive-CoterieMarketing/Budget management/export.csv","/Users/mikhailskrebnev/Library/CloudStorage/OneDrive-CoterieMarketing/Budget management/Projects export.csv")
+    os.rename("/Users/mikhailskrebnev/Library/CloudStorage/OneDrive/Budget management/export.csv","/Users/mikhailskrebnev/Library/CloudStorage/OneDrive/Budget management/Projects export.csv")
 except FileNotFoundError:
     print("No file to rename")
 
 # %%
-file_path = os.path.join("/Users/mikhailskrebnev/Library/CloudStorage/OneDrive-CoterieMarketing/Budget management")
+file_path = os.path.join("/Users/mikhailskrebnev/Library/CloudStorage/OneDrive/Budget management")
 #file_name= os.path.split("Auto_Projects.csv")
 
-os.remove("/Users/mikhailskrebnev/Library/CloudStorage/OneDrive-CoterieMarketing/Budget management/Tasks export.csv")
+os.remove("/Users/mikhailskrebnev/Library/CloudStorage/OneDrive/Budget management/Tasks export.csv")
 
 chrome_options = Options()
 chrome_options.add_experimental_option("prefs", {
@@ -109,15 +109,15 @@ time.sleep(55)
 driver.close()
 
 try:
-    os.rename("/Users/mikhailskrebnev/Library/CloudStorage/OneDrive-CoterieMarketing/Budget management/export.csv","/Users/mikhailskrebnev/Library/CloudStorage/OneDrive-CoterieMarketing/Budget management/Tasks export.csv")
+    os.rename("/Users/mikhailskrebnev/Library/CloudStorage/OneDrive/Budget management/export.csv","/Users/mikhailskrebnev/Library/CloudStorage/OneDrive/Budget management/Tasks export.csv")
 except FileNotFoundError:
     print("No file to rename")
 
 # %%
-file_path = os.path.join("/Users/mikhailskrebnev/Library/CloudStorage/OneDrive-CoterieMarketing/Budget management")
+file_path = os.path.join("/Users/mikhailskrebnev/Library/CloudStorage/OneDrive/Budget management")
 #file_name= os.path.split("Auto_Projects.csv")
 
-os.remove("/Users/mikhailskrebnev/Library/CloudStorage/OneDrive-CoterieMarketing/Budget management/Time Report export.csv")
+os.remove("/Users/mikhailskrebnev/Library/CloudStorage/OneDrive/Budget management/Time Report export.csv")
 
 chrome_options = Options()
 chrome_options.add_experimental_option("prefs", {
@@ -148,19 +148,19 @@ time.sleep(70)
 driver.close()
 
 try:
-    os.rename("/Users/mikhailskrebnev/Library/CloudStorage/OneDrive-CoterieMarketing/Budget management/export.csv","/Users/mikhailskrebnev/Library/CloudStorage/OneDrive-CoterieMarketing/Budget management/Time Report export.csv")
+    os.rename("/Users/mikhailskrebnev/Library/CloudStorage/OneDrive/Budget management/export.csv","/Users/mikhailskrebnev/Library/CloudStorage/OneDrive/Budget management/Time Report export.csv")
 except FileNotFoundError:
     print("No file to rename")
 
 
 #Import all sourse datasheets
 
-time = pd.read_csv('/Users/mikhailskrebnev/Library/CloudStorage/OneDrive-CoterieMarketing/Budget management/Time Report export.csv')
-projects= pd.read_csv('/Users/mikhailskrebnev/Library/CloudStorage/OneDrive-CoterieMarketing/Budget management/Projects export.csv')
-tasks= pd.read_csv('/Users/mikhailskrebnev/Library/CloudStorage/OneDrive-CoterieMarketing/Budget management/Tasks export.csv')
-expenses= pd.read_csv('/Users/mikhailskrebnev/Library/CloudStorage/OneDrive-CoterieMarketing/Budget management/Expence export for 2022.csv')
+time = pd.read_csv('/Users/mikhailskrebnev/Library/CloudStorage/OneDrive/Budget management/Time Report export.csv')
+projects= pd.read_csv('/Users/mikhailskrebnev/Library/CloudStorage/OneDrive/Budget management/Projects export.csv')
+tasks= pd.read_csv('/Users/mikhailskrebnev/Library/CloudStorage/OneDrive/Budget management/Tasks export.csv')
+expenses= pd.read_csv('/Users/mikhailskrebnev/Library/CloudStorage/OneDrive/Budget management/Expence export for 2022.csv')
 
-rates= pd.read_excel('/Users/mikhailskrebnev/Library/CloudStorage/OneDrive-CoterieMarketing/Budget management/Rates Sale.xlsx')
+rates= pd.read_excel('/Users/mikhailskrebnev/Library/CloudStorage/OneDrive/Budget management/Rates Sale.xlsx')
 
 # %%
 #Change the data type of Tasks columns
@@ -270,5 +270,5 @@ time_tasks_rates_expenses['Expense Task for Pivot'] = time_tasks_rates_expenses[
 
 
 output = time_tasks_rates_expenses
-output.to_excel('/Users/mikhailskrebnev/Library/CloudStorage/OneDrive-CoterieMarketing/Budget management/Sourse for budget tracker.xlsx', index=False)
+output.to_excel('/Users/mikhailskrebnev/Library/CloudStorage/OneDrive/Budget management/Sourse for budget tracker.xlsx', index=False)
 
