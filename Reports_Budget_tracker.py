@@ -17,13 +17,9 @@ import numpy as np
 from openpyxl import load_workbook
 
 
-# %%
-#PATH = input("Enter the Webdriver path: ")
 USERNAME = 
 PASSWORD = 
 
-
-# %%
 file_path = os.path.join("/Users/mikhailskrebnev/Library/CloudStorage/OneDrive/Budget management")
 #file_name= os.path.split("Auto_Projects.csv")
 
@@ -39,7 +35,6 @@ chrome_options.add_experimental_option("prefs", {
 
 driver = webdriver.Chrome(chrome_options=chrome_options)
 
-#driver = webdriver.Chrome(PATH)
 driver.get("https://app.activecollab.com/129853/reports/projects")
 time.sleep(3)
 email=driver.find_element(By.ID,"email")
@@ -68,7 +63,7 @@ try:
 except FileNotFoundError:
     print("No file to rename")
 
-# %%
+
 file_path = os.path.join("/Users/mikhailskrebnev/Library/CloudStorage/OneDrive/Budget management")
 #file_name= os.path.split("Auto_Projects.csv")
 
@@ -113,7 +108,6 @@ try:
 except FileNotFoundError:
     print("No file to rename")
 
-# %%
 file_path = os.path.join("/Users/mikhailskrebnev/Library/CloudStorage/OneDrive/Budget management")
 #file_name= os.path.split("Auto_Projects.csv")
 
@@ -183,16 +177,13 @@ tasks_3_columns = tasks[['Project Name','Task List Name','Parent Name']]
 #print(tasks.dtypes)
 
 
-# %%
 #Change the data type of Project columns
 
 project_dates = ['Created On', 'Completed On']
 projects = projects.convert_dtypes()
 projects[project_dates] = projects[project_dates].apply(pd.to_datetime)
 
-#print(projects.dtypes)
 
-# %%
 #Change the data type of Expenses columns
 
 expenses_dates = ['Record Date']
@@ -217,8 +208,6 @@ expenses_3_columns = expenses_4_columns[['Project Name', 'Task List Name', 'Join
 expenses_2_columns = expenses_4_columns[['Joint', 'Expense Task Total']]
 
 
-
-# %%
 #Change the data type of Time columns
 
 time_dates = ['Record Date']
@@ -235,8 +224,6 @@ time_tasks_rates['Budget Task Total'] = time_tasks_rates['Budget Task Total'].st
 
 time_tasks_rates['Budget Task Total'] = pd.to_numeric(time_tasks_rates['Budget Task Total'], errors='coerce')
 #time_tasks_rates['Budget Task Total']=float(time_tasks_rates['Budget Task Total'][0])
-
-#print(time_tasks_rates.dtypes)
 
 
 time_tasks_rates['Joint'] = time_tasks_rates['Project Name']+' | '+time_tasks_rates['Task List Name']
